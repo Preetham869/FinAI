@@ -42,28 +42,28 @@ export const AIInsights = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-50 flex items-center gap-2">
           <BrainCircuit className="text-indigo-600" />
           AI Insights & Predictions
         </h1>
-        <p className="text-sm text-slate-500 mt-1">Machine learning predictions and rule-based insights (CO3, CO4, CO5).</p>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Machine learning predictions and rule-based insights.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
-        {/* ML Prediction (CO5) */}
-        <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+        {/* ML Prediction */}
+        <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
           <div className="flex justify-between items-start mb-6">
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 flex items-center gap-2">
                 <ChartIcon size={16} className="text-indigo-600" />
                 Expense Forecasting
               </h3>
-              <p className="text-xs text-slate-500 mt-1">Linear Regression on historical data</p>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Linear Regression on historical data</p>
             </div>
             <div className="text-right">
-              <p className="text-2xl font-bold text-indigo-700">₹{totalPred.predictedAmount}</p>
-              <p className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Pred. Next Month</p>
+              <p className="text-2xl font-bold text-indigo-700 dark:text-indigo-300">₹{totalPred.predictedAmount}</p>
+              <p className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider">Pred. Next Month</p>
             </div>
           </div>
           
@@ -79,15 +79,15 @@ export const AIInsights = () => {
               </LineChart>
             </ResponsiveContainer>
           </div>
-          <div className="p-3 bg-indigo-50 rounded-xl text-xs text-indigo-900 border border-indigo-100">
+          <div className="p-3 bg-indigo-50 dark:bg-indigo-900/30 rounded-xl text-xs text-indigo-900 border border-indigo-100 dark:border-indigo-800/50">
             <strong>Model Info:</strong> Simple Linear Regression trained on {totalPred.historicalData.length} months of data. 
             Confidence: <span className="font-semibold">{totalPred.confidence}</span>.
           </div>
         </div>
 
-        {/* Knowledge & Rules (CO3, CO4) */}
-        <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-          <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
+        {/* Knowledge & Rules */}
+        <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4 flex items-center gap-2">
             <Target size={16} className="text-indigo-600" />
             Category Predictions
           </h3>
@@ -95,22 +95,22 @@ export const AIInsights = () => {
             {categoryPredictions.length > 0 ? categoryPredictions.map((pred, i) => (
               <div key={i} className="flex justify-between items-center p-3 border-b border-slate-50 last:border-0">
                 <div>
-                  <h4 className="font-medium text-slate-900 text-sm">{pred.category}</h4>
-                  <p className="text-[10px] text-slate-500 uppercase tracking-wide">Confidence: {pred.confidence}</p>
+                  <h4 className="font-medium text-slate-900 dark:text-slate-50 text-sm">{pred.category}</h4>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wide">Confidence: {pred.confidence}</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-bold text-slate-900">₹{pred.predictedAmount}</p>
+                  <p className="font-bold text-slate-900 dark:text-slate-50">₹{pred.predictedAmount}</p>
                 </div>
               </div>
             )) : (
-              <p className="text-sm text-slate-500">Not enough data for category predictions.</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Not enough data for category predictions.</p>
             )}
           </div>
         </div>
 
       </div>
 
-      <div className="bg-slate-900 p-6 rounded-2xl shadow-lg relative overflow-hidden">
+      <div className="bg-slate-900 dark:bg-slate-950 p-6 rounded-2xl shadow-lg relative overflow-hidden">
         <h3 className="text-sm font-bold uppercase tracking-wider opacity-60 text-white mb-6 flex items-center gap-2 relative z-10">
           <Zap size={16} className="text-amber-400" />
           Agent Explanations (Explainable AI)
@@ -126,7 +126,7 @@ export const AIInsights = () => {
             </div>
           ))}
           {analysis.recommendations.length === 0 && (
-             <p className="text-sm text-slate-400">No active rules triggered.</p>
+             <p className="text-sm text-slate-400 dark:text-slate-500">No active rules triggered.</p>
           )}
         </div>
         <div className='absolute -bottom-10 -right-10 h-40 w-40 bg-indigo-500/20 rounded-full blur-2xl z-0 pointer-events-none'></div>

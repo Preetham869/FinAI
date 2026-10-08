@@ -1,4 +1,4 @@
-// CO3: Knowledge Representation
+// Knowledge Representation
 // Representing financial knowledge, rules, constraints, and recommendations
 
 export const CATEGORIES = [

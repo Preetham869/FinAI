@@ -1,4 +1,4 @@
-// CO4: Rule-based reasoning
+// Rule-based reasoning
 // IF-THEN engine to analyze financial data
 
 import { Budget, Recommendation, Transaction } from '../types';

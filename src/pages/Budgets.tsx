@@ -48,38 +48,38 @@ export const Budgets = () => {
   return (
     <div className="space-y-6 max-w-5xl">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">Budgets</h1>
-        <p className="text-sm text-slate-500 mt-1">Set limits for your spending categories.</p>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-50">Budgets</h1>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Set limits for your spending categories.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Form */}
-        <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm h-fit">
-          <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-6">Set Budget</h3>
+        <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm h-fit">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-6">Set Budget</h3>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-medium uppercase tracking-wider text-slate-400 mb-1">Category</label>
+              <label className="block text-xs font-medium uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1">Category</label>
               <select 
                 value={category} 
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-slate-50 text-slate-900"
+                className="w-full px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 focus:outline-none bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50"
               >
                 {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
 
             <div>
-              <label className="block text-xs font-medium uppercase tracking-wider text-slate-400 mb-1">Amount Limit (₹)</label>
+              <label className="block text-xs font-medium uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1">Amount Limit (₹)</label>
               <input 
                 type="number" 
                 required 
                 value={amount} 
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-slate-50 text-slate-900" 
+                className="w-full px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 focus:outline-none bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50" 
               />
             </div>
 
-            <button type="submit" className="w-full bg-indigo-600 text-white py-2.5 rounded-xl font-medium hover:bg-indigo-700 transition mt-2">
+            <button type="submit" className="w-full bg-indigo-600 text-white py-2.5 rounded-xl font-medium hover:bg-indigo-700 dark:hover:bg-indigo-500 transition mt-2">
               Save Budget
             </button>
           </form>
@@ -93,16 +93,16 @@ export const Budgets = () => {
             const isOver = spent > budget.amount;
 
             return (
-              <div key={budget.id} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm">
+              <div key={budget.id} className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
                 <div className="flex justify-between items-end mb-3">
-                  <h4 className="font-bold text-slate-900">{budget.category}</h4>
+                  <h4 className="font-bold text-slate-900 dark:text-slate-50">{budget.category}</h4>
                   <div className="text-right">
-                    <span className={`font-bold ${isOver ? 'text-red-500' : 'text-slate-900'}`}>₹{spent}</span>
-                    <span className="text-slate-400 text-sm"> / ₹{budget.amount}</span>
+                    <span className={`font-bold ${isOver ? 'text-red-500' : 'text-slate-900 dark:text-slate-50'}`}>₹{spent}</span>
+                    <span className="text-slate-400 dark:text-slate-500 text-sm"> / ₹{budget.amount}</span>
                   </div>
                 </div>
                 
-                <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
                   <div 
                     className={`h-full rounded-full transition-all duration-500 ${isOver ? 'bg-red-500' : percentage > 80 ? 'bg-orange-400' : 'bg-indigo-600'}`} 
                     style={{ width: `${percentage}%` }}
@@ -117,7 +117,7 @@ export const Budgets = () => {
           })}
 
           {budgets.length === 0 && (
-             <div className="p-8 text-center bg-white border border-slate-100 rounded-2xl text-slate-500">
+             <div className="p-8 text-center bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl text-slate-500 dark:text-slate-400">
                No budgets set for this month.
              </div>
           )}

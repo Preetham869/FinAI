@@ -1,4 +1,4 @@
-// CO5: Machine learning for intelligent decision-making
+// Machine learning for intelligent decision-making
 // Using Linear Regression to predict future expenses
 
 import { linearRegression, linearRegressionLine } from 'simple-statistics';

@@ -1,4 +1,4 @@
-// CO1: Intelligent agent models and problem-solving
+// Intelligent agent models and problem-solving
 // Agent that orchestrates data observation, ML prediction, and Rule evaluation
 
 import { Budget, Recommendation, Transaction, AIInsight } from '../types';
