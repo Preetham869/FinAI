@@ -1,0 +1,6 @@
+{
+  "name": "FinAI Manager",
+  "description": "AI-Powered Personal Finance Manager with ML predictions and rule-based insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

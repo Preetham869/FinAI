@@ -1,0 +1,30 @@
+{
+  "collections": {
+    "users": {
+      "rules": {
+        "read": "request.auth != null && request.auth.uid == resource.id",
+        "write": "request.auth != null && request.auth.uid == documentId"
+      },
+      "indexes": []
+    },
+    "transactions": {
+      "rules": {
+        "read": "request.auth != null && resource.data.userId == request.auth.uid",
+        "write": "request.auth != null && request.resource.data.userId == request.auth.uid"
+      },
+      "indexes": [
+        { "fields": ["userId", "date"] },
+        { "fields": ["userId", "category"] }
+      ]
+    },
+    "budgets": {
+      "rules": {
+        "read": "request.auth != null && resource.data.userId == request.auth.uid",
+        "write": "request.auth != null && request.resource.data.userId == request.auth.uid"
+      },
+      "indexes": [
+        { "fields": ["userId", "month"] }
+      ]
+    }
+  }
+}
